@@ -1,0 +1,102 @@
+#!/bin/bash
+
+set -e
+
+SRC=$1
+
+if [[ ! -f "$SRC" ]]
+then
+  >&2 echo "'$SRC' does not exist."
+  exit 1
+fi
+
+SRC=$(readlink -f "$SRC")
+
+if [[ $(basename "$SRC" .tar.gz) == $(basename "$SRC") ]]
+then
+  >&2 echo "'$SRC' must have extension '.tar.gz'."
+  exit 2
+fi
+
+chmod 644 "$SRC"
+
+cd $(dirname $(readlink -f "$0"))/..
+
+FULL=$(basename "$SRC")
+PREFIX=${FULL%%.tar.gz}
+NAME=${PREFIX%%_*}
+VERSION=${PREFIX##*_}
+
+SRCDIR="src/contrib"
+mkdir -p "$SRCDIR"
+cp "$SRC" "$SRCDIR"
+
+LINUXDIRLIBS="lib/linux/$NAME"
+MACDIRLIBS="lib/macosx/$NAME"
+WINDIRLIBS="lib/windows/$NAME"
+mkdir -p "$LINUXDIRLIBS" "$MACDIRLIBS" "$WINDIRLIBS"
+
+SCRATCH=scratch
+mkdir -p "$SCRATCH"
+
+
+echo
+echo
+echo +---------------------------------+
+echo ----------- LINUX BUILD -----------
+echo +---------------------------------+
+ssh linbuilder rm -rf "$SCRATCH"
+ssh linbuilder mkdir "$SCRATCH"
+scp "$SRC" linbuilder:"$SCRATCH"
+ssh linbuilder tar zx -C "$SCRATCH" -f "$SCRATCH/$FULL"
+ssh linbuilder bash --login -e R CMD INSTALL "$SCRATCH/$NAME"
+ssh linbuilder tar zc -C "$SCRATCH/$NAME" -f "$SCRATCH/$NAME/$VERSION.tar.gz" src/rustlib/target/release/librustlib.a
+scp linbuilder:"$SCRATCH/$NAME/$VERSION.tar.gz" "$LINUXDIRLIBS"
+
+
+echo
+echo
+echo +-------------------------------+
+echo ----------- MAC BUILD -----------
+echo +-------------------------------+
+ssh macbuilder rm -rf "$SCRATCH"
+ssh macbuilder mkdir "$SCRATCH"
+scp "$SRC" macbuilder:"$SCRATCH"
+ssh macbuilder tar zx -C "$SCRATCH" -f "$SCRATCH/$FULL"
+ssh macbuilder bash --login -e R CMD INSTALL --build "$SCRATCH/$NAME"
+scp macbuilder:"$PREFIX.tgz" "$SCRATCH"
+ssh macbuilder rm "$PREFIX.tgz"
+BINVERSION=$(tar xO -f "$SCRATCH/$PREFIX.tgz" "$NAME"/DESCRIPTION | grep -Po "Built: R \d+.\d+" | cut -d' ' -f 3)
+MACDIR="bin/macosx/el-capitan/contrib/$BINVERSION"
+mkdir -p "$MACDIR"
+mv "$SCRATCH/$PREFIX.tgz" "$MACDIR"
+ssh macbuilder tar zc -C "$SCRATCH/$NAME" -f "$SCRATCH/$NAME/$VERSION.tar.gz" src/rustlib/target/release/librustlib.a
+scp macbuilder:"$SCRATCH/$NAME/$VERSION.tar.gz" "$MACDIRLIBS"
+
+
+echo
+echo
+echo +-------------------------------+
+echo ----------- WIN BUILD -----------
+echo +-------------------------------+
+ssh winbuilder rm -rf "$SCRATCH"
+ssh winbuilder mkdir "$SCRATCH"
+scp "$SRC" winbuilder:"$SCRATCH"
+ssh winbuilder tar zx -C "$SCRATCH" -f "$SCRATCH/$FULL"
+ssh winbuilder R CMD INSTALL --build "$SCRATCH/$NAME"
+scp winbuilder:"$PREFIX.zip" "$SCRATCH"
+ssh winbuilder rm "$PREFIX.zip"
+BINVERSION=$(unzip -p "$SCRATCH/$PREFIX.zip" "$NAME"/DESCRIPTION | grep -Po "Built: R \d+.\d+" | cut -d' ' -f 3)
+WINDIR="bin/windows/contrib/$BINVERSION"
+mkdir -p "$WINDIR"
+mv "$SCRATCH/$PREFIX.zip" "$WINDIR"
+ssh winbuilder tar c -C "$SCRATCH/$NAME" -f "$SCRATCH/$NAME/$VERSION.tar" src-i386/rustlib/target/i686-pc-windows-gnu/release/rustlib.lib src-x64/rustlib/target/x86_64-pc-windows-gnu/release/rustlib.lib
+scp winbuilder:"$SCRATCH/$NAME/$VERSION.tar" "$WINDIRLIBS"
+gzip -f "$WINDIRLIBS/$VERSION.tar"
+
+
+echo
+echo
+./scripts/updatePACKAGES
+
+
