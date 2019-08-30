@@ -1,0 +1,69 @@
+#!/bin/bash
+
+set -e
+
+cd $(dirname $(readlink -f "$0"))/..
+CWD=$PWD
+
+
+
+cd src/contrib
+Rscript <(cat <<EOF
+  tools::write_PACKAGES(".",type="source")
+  packages <- as.data.frame(read.dcf("PACKAGES"),stringsAsFactors=FALSE)
+  current <- paste0(packages\$Package,"_",packages\$Version,".tar.gz")
+  all <- list.files(".",".*\\\.tar\\\.gz")
+  old <- setdiff(all,current)
+  unlink(old)
+EOF
+)
+cd "$CWD"
+
+
+
+
+cd bin/windows/contrib
+for i in $(ls)
+do
+  cd "$i"
+Rscript <(cat <<EOF
+  tools::write_PACKAGES(".",type="win.binary")
+  packages <- as.data.frame(read.dcf("PACKAGES"),stringsAsFactors=FALSE)
+  current <- paste0(packages\$Package,"_",packages\$Version,".zip")
+  all <- list.files(".",".*\\\.zip")
+  old <- setdiff(all,current)
+  unlink(old)
+EOF
+)
+  cd ".."
+done
+cd "$CWD"
+
+
+
+
+cd bin/macosx/el-capitan/contrib
+for i in $(ls)
+do
+  cd "$i"
+Rscript <(cat <<EOF
+  tools::write_PACKAGES(".",type="mac.binary")
+  packages <- as.data.frame(read.dcf("PACKAGES"),stringsAsFactors=FALSE)
+  current <- paste0(packages\$Package,"_",packages\$Version,".tgz")
+  all <- list.files(".",".*\\\.tgz")
+  old <- setdiff(all,current)
+  unlink(old)
+EOF
+)
+  cd ".."
+done
+cd "$CWD"
+
+
+
+chmod -R a+r .
+
+git add src bin lib
+git commit -m 'Automated update.'
+git push
+
