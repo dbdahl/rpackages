@@ -19,3 +19,9 @@ You can then install packages as usual, e.g.:
 install.packages("rscala")
 ```
 
+To install all of packages, execute the following in R:
+
+```R
+source("https://dbdahl.github.io/rpackages/scripts/reinstall-all, echo=TRUE") 
+```
+
