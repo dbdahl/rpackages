@@ -25,7 +25,7 @@ Package: salso
 Version: 0.1.0
 Depends: R (>= 2.10)
 License: MIT + file LICENSE | Apache License 2.0
-MD5sum: e606265692eedb8f712618e00d14b29b
+MD5sum: 318addf03b44451fd9ea5e1b47669cbe
 
 Package: sdols
 Version: 1.7.5
