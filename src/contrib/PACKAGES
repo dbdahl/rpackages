@@ -1,3 +1,11 @@
+Package: commonsMath
+Version: 1.2.4
+Suggests: rscala (>= 3.2.14), rJava (>= 0.9-10), testthat, knitr,
+        rmarkdown
+License: Apache License 2.0 | file LICENSE
+MD5sum: 3b223917bd295b3b08646ac7a50659b9
+NeedsCompilation: no
+
 Package: rscala
 Version: 3.2.15
 Depends: R (>= 3.1.0)
