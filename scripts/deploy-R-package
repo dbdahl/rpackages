@@ -36,14 +36,23 @@ if [[ "$(git status --untracked-files=no --porcelain)" ]]
 then 
   git status
   echo
-  >&2 echo "There are untracked changes."
+  >&2 echo "There are untracked changes in $PWD."
   echo
   exit 4
 fi
 
-chmod 644 "$SRC"
-
 cd $(dirname $(readlink -f "$0"))/..
+
+git pull
+
+if [[ "$(git status --untracked-files=no --porcelain)" ]]
+then 
+  git status
+  echo
+  >&2 echo "There are untracked changes in $PWD."
+  echo
+  exit 4
+fi
 
 FULL=$(basename "$SRC")
 PREFIX=${FULL%%.tar.gz}
