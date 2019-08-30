@@ -65,5 +65,5 @@ chmod -R a+r .
 
 git add src bin lib
 git commit -m 'Automated update.'
-git push
+#git push
 

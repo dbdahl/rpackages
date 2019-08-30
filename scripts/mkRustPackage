@@ -2,36 +2,43 @@
 
 set -e
 
-
-
-git pull
-
-if [ "$(git status --untracked-files=no --porcelain)" ]
-then 
-  git status
-  echo
-  >&2 echo "There are untracked changes."
-  echo
-  exit 1
+if [[ "$1" == --rust ]]
+then
+  DO_RUST=true
+  shift
 fi
 
-
-
+if [[ $# -ne 1 ]]
+then
+  >&2 echo "usage: $0 [ --rust ] PACKAGE.tar.gz"
+  exit 1
+fi
 
 SRC=$1
 
 if [[ ! -f "$SRC" ]]
 then
   >&2 echo "'$SRC' does not exist."
-  exit 1
+  exit 2
 fi
-
-SRC=$(readlink -f "$SRC")
 
 if [[ $(basename "$SRC" .tar.gz) == $(basename "$SRC") ]]
 then
   >&2 echo "'$SRC' must have extension '.tar.gz'."
-  exit 2
+  exit 3
+fi
+
+SRC=$(readlink -f "$SRC")
+
+git pull
+
+if [[ "$(git status --untracked-files=no --porcelain)" ]]
+then 
+  git status
+  echo
+  >&2 echo "There are untracked changes."
+  echo
+  exit 4
 fi
 
 chmod 644 "$SRC"
@@ -66,8 +73,11 @@ ssh linbuilder mkdir "$SCRATCH"
 scp "$SRC" linbuilder:"$SCRATCH"
 ssh linbuilder tar zx -C "$SCRATCH" -f "$SCRATCH/$FULL"
 ssh linbuilder bash --login -e R CMD INSTALL "$SCRATCH/$NAME"
-ssh linbuilder tar zc -C "$SCRATCH/$NAME" -f "$SCRATCH/$NAME/$VERSION.tar.gz" src/rustlib/target/release/librustlib.a
-scp linbuilder:"$SCRATCH/$NAME/$VERSION.tar.gz" "$LINUXDIRLIBS"
+if [[ "$DO_RUST" ]]
+then
+  ssh linbuilder tar zc -C "$SCRATCH/$NAME" -f "$SCRATCH/$NAME/$VERSION.tar.gz" src/rustlib/target/release/librustlib.a
+  scp linbuilder:"$SCRATCH/$NAME/$VERSION.tar.gz" "$LINUXDIRLIBS"
+fi
 
 
 echo
@@ -86,9 +96,11 @@ BINVERSION=$(tar xO -f "$SCRATCH/$PREFIX.tgz" "$NAME"/DESCRIPTION | grep -Po "Bu
 MACDIR="bin/macosx/el-capitan/contrib/$BINVERSION"
 mkdir -p "$MACDIR"
 mv "$SCRATCH/$PREFIX.tgz" "$MACDIR"
-ssh macbuilder tar zc -C "$SCRATCH/$NAME" -f "$SCRATCH/$NAME/$VERSION.tar.gz" src/rustlib/target/release/librustlib.a
-scp macbuilder:"$SCRATCH/$NAME/$VERSION.tar.gz" "$MACDIRLIBS"
-
+if [[ "$DO_RUST" ]]
+then
+  ssh macbuilder tar zc -C "$SCRATCH/$NAME" -f "$SCRATCH/$NAME/$VERSION.tar.gz" src/rustlib/target/release/librustlib.a
+  scp macbuilder:"$SCRATCH/$NAME/$VERSION.tar.gz" "$MACDIRLIBS"
+fi
 
 echo
 echo
