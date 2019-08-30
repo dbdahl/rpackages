@@ -2,16 +2,29 @@
 
 set -e
 
-if [[ "$1" == --rust ]]
-then
-  DO_RUST=true
-  shift
-fi
+function usage() {
+  >&2 echo "usage: $0 [ --rust --allow-dirty ] PACKAGE.tar.gz"
+  exit 1
+}
+
+while [[ $# -gt 1 ]]
+do
+  if [[ "$1" == --rust ]]
+  then
+    DO_RUST=true
+    shift
+  elif [[ "$1" == --allow-dirty ]]
+  then
+    ALLOW_DIRTY=true
+    shift
+  else
+    usage
+  fi
+done
 
 if [[ $# -ne 1 ]]
 then
-  >&2 echo "usage: $0 [ --rust ] PACKAGE.tar.gz"
-  exit 1
+  usage
 fi
 
 SRC=$1
@@ -137,6 +150,6 @@ fi
 
 echo
 echo
-./scripts/updatePACKAGES
+./scripts/update-PACKAGES
 
 
