@@ -1,3 +1,11 @@
+Package: rscala
+Version: 3.2.15
+Depends: R (>= 3.1.0)
+Imports: utils
+Suggests: testthat, devtools, rstudioapi, processx
+License: Apache License 2.0 | file LICENSE
+MD5sum: d057d87df2d7f8fe725509bd34061050
+
 Package: salso
 Version: 0.1.0
 Depends: R (>= 2.10)
