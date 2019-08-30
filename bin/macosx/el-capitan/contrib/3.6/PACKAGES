@@ -1,0 +1,5 @@
+Package: salso
+Version: 0.1.0
+Depends: R (>= 2.10)
+License: MIT + file LICENSE | Apache License 2.0
+MD5sum: 254ce91fc6ff07c041189b204b5a9b7c
