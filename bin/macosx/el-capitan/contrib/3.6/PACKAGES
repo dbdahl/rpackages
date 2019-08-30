@@ -1,3 +1,11 @@
+Package: aibd
+Version: 0.1.0-20190710-1753
+Depends: sdols (> 1.7.4)
+Imports: rscala (>= 3.2.14)
+Suggests: testthat
+License: GPL-3
+MD5sum: ad512391d0972987019be338328486d5
+
 Package: commonsMath
 Version: 1.2.4
 Suggests: rscala (>= 3.2.14), rJava (>= 0.9-10), testthat, knitr,
