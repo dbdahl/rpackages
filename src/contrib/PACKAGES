@@ -21,3 +21,11 @@ Depends: R (>= 2.10)
 License: MIT + file LICENSE | Apache License 2.0
 MD5sum: 6cdfa1192ad9f4b63de5758fe2aaf906
 NeedsCompilation: yes
+
+Package: sdols
+Version: 1.7.5
+Depends: R (>= 3.1.0)
+Imports: rscala (>= 3.2.14), commonsMath (>= 1.2.3), stats
+License: Apache License 2.0 | file LICENSE
+MD5sum: efe272b4d93398218317e2e6c7430a91
+NeedsCompilation: no
