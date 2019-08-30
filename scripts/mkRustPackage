@@ -118,9 +118,12 @@ BINVERSION=$(unzip -p "$SCRATCH/$PREFIX.zip" "$NAME"/DESCRIPTION | grep -Po "Bui
 WINDIR="bin/windows/contrib/$BINVERSION"
 mkdir -p "$WINDIR"
 mv "$SCRATCH/$PREFIX.zip" "$WINDIR"
-ssh winbuilder tar c -C "$SCRATCH/$NAME" -f "$SCRATCH/$NAME/$VERSION.tar" src-i386/rustlib/target/i686-pc-windows-gnu/release/rustlib.lib src-x64/rustlib/target/x86_64-pc-windows-gnu/release/rustlib.lib
-scp winbuilder:"$SCRATCH/$NAME/$VERSION.tar" "$WINDIRLIBS"
-gzip -f "$WINDIRLIBS/$VERSION.tar"
+if [[ "$DO_RUST" ]]
+then
+  ssh winbuilder tar c -C "$SCRATCH/$NAME" -f "$SCRATCH/$NAME/$VERSION.tar" src-i386/rustlib/target/i686-pc-windows-gnu/release/rustlib.lib src-x64/rustlib/target/x86_64-pc-windows-gnu/release/rustlib.lib
+  scp winbuilder:"$SCRATCH/$NAME/$VERSION.tar" "$WINDIRLIBS"
+  gzip -f "$WINDIRLIBS/$VERSION.tar"
+fi
 
 
 echo
