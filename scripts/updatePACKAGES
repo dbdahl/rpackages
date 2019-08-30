@@ -67,3 +67,6 @@ git add src bin lib
 git commit -m 'Automated update.'
 #git push
 
+echo
+echo
+
