@@ -19,8 +19,8 @@ Suggests: testthat, devtools, rstudioapi, processx
 License: Apache License 2.0 | file LICENSE
 
 Package: salso
-Version: 0.1.0
-Depends: R (>= 2.10)
+Version: 0.1.1
+Depends: R (>= 3.3.0)
 License: MIT + file LICENSE | Apache License 2.0
 Archs: i386, x64
 
