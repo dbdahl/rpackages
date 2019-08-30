@@ -1,0 +1,23 @@
+local({
+
+snippet <- '
+local({
+  r <- getOption("repos")
+  r <- r[setdiff(names(r),c("dahl","CRAN"))]
+  r <- c(dahl="https://dbdahl.github.io/rpackages", r, CRAN="https://cran.rstudio.com")
+  options(repos=r)
+})'
+
+f <- file("~/.Rprofile", open="at")
+writeLines(snippet, f)
+close(f)
+
+cat("\n")
+cat("Added David B. Dahl's repository to your ~/.Rprofile.\n")
+cat("This will be effective for new R sessions.\n")
+cat("After that, you can install and update packages as ususual,\n")
+cat('e.g., install.packages("rscala") or update.packages()\n')
+cat("\n")
+
+})
+
