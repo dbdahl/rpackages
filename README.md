@@ -10,7 +10,7 @@ This is a CRAN-like repository for R packages by David B. Dahl and collaborators
 To enable this repository, execute the following in R:
 
 ```R
-source("https://dbdahl.github.io/rpackages/enable") 
+source("https://dbdahl.github.io/rpackages/scripts/enable") 
 ```
 
 You can then install packages as usual, e.g.:
@@ -22,6 +22,6 @@ install.packages("rscala")
 To install all of packages, execute the following in R:
 
 ```R
-source("https://dbdahl.github.io/rpackages/scripts/reinstall-all, echo=TRUE") 
+source("https://dbdahl.github.io/rpackages/scripts/reinstall-all", echo=TRUE) 
 ```
 
