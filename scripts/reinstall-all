@@ -1,6 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env Rscript
 
-cd $(dirname $(readlink -f "$0"))/..
-
-Rscript -e 'install.packages(read.dcf("src/contrib/PACKAGES")[,"Package"])'
+install.packages(read.dcf(url("https://dbdahl.github.io/rpackages/src/contrib/PACKAGES"))[,"Package"])
 
