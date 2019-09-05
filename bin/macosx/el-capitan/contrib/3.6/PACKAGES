@@ -13,13 +13,20 @@ Suggests: rscala (>= 3.2.14), rJava (>= 0.9-10), testthat, knitr,
 License: Apache License 2.0 | file LICENSE
 MD5sum: 06a166b09713751d30513d993e4398b1
 
+Package: focal
+Version: 0.1.0
+Depends: R (>= 3.3.0)
+Suggests: testthat, shallot
+License: MIT + file LICENSE | Apache License 2.0
+MD5sum: c224b68fdfb172b61a655859549dc260
+
 Package: rscala
-Version: 3.2.15
+Version: 3.2.15-20190905-1319
 Depends: R (>= 3.1.0)
 Imports: utils
 Suggests: testthat, devtools, rstudioapi, processx
 License: Apache License 2.0 | file LICENSE
-MD5sum: d057d87df2d7f8fe725509bd34061050
+MD5sum: 00d50465d7dbb5378025fa199a7a3806
 
 Package: salso
 Version: 0.1.2

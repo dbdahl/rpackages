@@ -15,13 +15,21 @@ License: Apache License 2.0 | file LICENSE
 MD5sum: 3b223917bd295b3b08646ac7a50659b9
 NeedsCompilation: no
 
+Package: focal
+Version: 0.1.0
+Depends: R (>= 3.3.0)
+Suggests: testthat, shallot
+License: MIT + file LICENSE | Apache License 2.0
+MD5sum: 581403ae5bbe10ae401d41c0d78faec1
+NeedsCompilation: yes
+
 Package: rscala
-Version: 3.2.15
+Version: 3.2.15-20190905-1319
 Depends: R (>= 3.1.0)
 Imports: utils
 Suggests: testthat, devtools, rstudioapi, processx
 License: Apache License 2.0 | file LICENSE
-MD5sum: 5da620bf5fd360d12ea557b6873f3aab
+MD5sum: 0a029107a6dc4b6bf8fb76df72bab176
 NeedsCompilation: no
 
 Package: salso
