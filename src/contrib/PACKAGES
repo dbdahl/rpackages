@@ -8,11 +8,11 @@ MD5sum: 398fde57ea65aad913328154fb093fc7
 NeedsCompilation: no
 
 Package: commonsMath
-Version: 1.2.4
+Version: 1.2.4-20190905-1641
 Suggests: rscala (>= 3.2.14), rJava (>= 0.9-10), testthat, knitr,
         rmarkdown
 License: Apache License 2.0 | file LICENSE
-MD5sum: 3b223917bd295b3b08646ac7a50659b9
+MD5sum: ddb08d692dea7430a54332f332233129
 NeedsCompilation: no
 
 Package: focal
