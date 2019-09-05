@@ -1,4 +1,6 @@
 #!/usr/bin/env Rscript
 
-install.packages(read.dcf(url("https://dbdahl.github.io/rpackages/src/contrib/PACKAGES"))[,"Package"])
+conn <- url("https://dbdahl.github.io/rpackages/src/contrib/PACKAGES")
+install.packages(read.dcf(conn)[,"Package"])
+close(conn)
 
