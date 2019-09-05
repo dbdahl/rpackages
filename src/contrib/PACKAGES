@@ -46,3 +46,10 @@ Imports: rscala (>= 3.2.14), commonsMath (>= 1.2.3), stats
 License: Apache License 2.0 | file LICENSE
 MD5sum: 89f90ca750f7e62d408b1751cd8bc6de
 NeedsCompilation: no
+
+Package: shallot
+Version: 0.4.6-20190905-1650
+Imports: rscala (>= 3.2.14), sdols (>= 1.7.5)
+License: Apache License 2.0 | file LICENSE
+MD5sum: f36014daa7abab0fa674c07f6252c114
+NeedsCompilation: no

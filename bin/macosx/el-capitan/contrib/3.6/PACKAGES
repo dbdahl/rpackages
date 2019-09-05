@@ -40,3 +40,9 @@ Depends: R (>= 3.1.0)
 Imports: rscala (>= 3.2.14), commonsMath (>= 1.2.3), stats
 License: Apache License 2.0 | file LICENSE
 MD5sum: 6ecd4c66a9a52f860d7fd708dcdf4f97
+
+Package: shallot
+Version: 0.4.6-20190905-1650
+Imports: rscala (>= 3.2.14), sdols (>= 1.7.5)
+License: Apache License 2.0 | file LICENSE
+MD5sum: 8c608f481d7c08216abb5f7921d9ee9e
