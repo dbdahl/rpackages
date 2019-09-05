@@ -40,9 +40,9 @@ MD5sum: c13f5e545e00f3954671cad7d41c2b15
 NeedsCompilation: yes
 
 Package: sdols
-Version: 1.7.5
+Version: 1.7.5-20190905-1646
 Depends: R (>= 3.1.0)
 Imports: rscala (>= 3.2.14), commonsMath (>= 1.2.3), stats
 License: Apache License 2.0 | file LICENSE
-MD5sum: efe272b4d93398218317e2e6c7430a91
+MD5sum: 89f90ca750f7e62d408b1751cd8bc6de
 NeedsCompilation: no

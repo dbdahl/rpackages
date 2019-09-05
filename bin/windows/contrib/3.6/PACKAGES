@@ -32,7 +32,7 @@ License: MIT + file LICENSE | Apache License 2.0
 Archs: i386, x64
 
 Package: sdols
-Version: 1.7.5
+Version: 1.7.5-20190905-1646
 Depends: R (>= 3.1.0)
 Imports: rscala (>= 3.2.14), commonsMath (>= 1.2.3), stats
 License: Apache License 2.0 | file LICENSE
