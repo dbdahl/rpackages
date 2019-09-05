@@ -19,7 +19,7 @@ License: MIT + file LICENSE | Apache License 2.0
 Archs: i386, x64
 
 Package: rscala
-Version: 3.2.15
+Version: 3.2.15-20190905-1627
 Depends: R (>= 3.1.0)
 Imports: utils
 Suggests: testthat, devtools, rstudioapi, processx
