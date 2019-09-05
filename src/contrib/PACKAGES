@@ -1,10 +1,10 @@
 Package: aibd
-Version: 0.1.0-20190710-1753
+Version: 0.1.0-20190905-1654
 Depends: sdols (> 1.7.4)
 Imports: rscala (>= 3.2.14)
 Suggests: testthat
 License: GPL-3
-MD5sum: 398fde57ea65aad913328154fb093fc7
+MD5sum: a78ead29a02dd3aff002b202c91eee4c
 NeedsCompilation: no
 
 Package: commonsMath
