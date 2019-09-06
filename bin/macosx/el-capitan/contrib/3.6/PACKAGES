@@ -18,7 +18,7 @@ Version: 0.1.0
 Depends: R (>= 3.3.0)
 Suggests: testthat, shallot
 License: MIT + file LICENSE | Apache License 2.0
-MD5sum: c224b68fdfb172b61a655859549dc260
+MD5sum: 130897df2dc1dca7fc9ff843ed052452
 
 Package: rscala
 Version: 3.2.15-20190905-1627
