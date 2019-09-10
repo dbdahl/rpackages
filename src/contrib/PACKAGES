@@ -20,7 +20,7 @@ Version: 0.1.0
 Depends: R (>= 3.3.0)
 Suggests: testthat, shallot
 License: MIT + file LICENSE | Apache License 2.0
-MD5sum: 6004bb413d72640cdece848c343379d4
+MD5sum: 593288b66260422f0cbff274d522fa7d
 NeedsCompilation: yes
 
 Package: rscala
