@@ -14,7 +14,7 @@ License: Apache License 2.0 | file LICENSE
 Package: focal
 Version: 0.1.0
 Depends: R (>= 3.3.0)
-Suggests: testthat, shallot
+Suggests: testthat, shallot, salso
 License: MIT + file LICENSE | Apache License 2.0
 Archs: i386, x64
 

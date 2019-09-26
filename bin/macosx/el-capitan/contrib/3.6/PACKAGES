@@ -16,9 +16,9 @@ MD5sum: 3e729afb9499e755e83af3b5f3a2927f
 Package: focal
 Version: 0.1.0
 Depends: R (>= 3.3.0)
-Suggests: testthat, shallot
+Suggests: testthat, shallot, salso
 License: MIT + file LICENSE | Apache License 2.0
-MD5sum: 81251498e071f4c47249d2ba127894a6
+MD5sum: 824f14e2070f6029412cbf06cb4fe754
 
 Package: rscala
 Version: 3.2.15-20190905-1627
