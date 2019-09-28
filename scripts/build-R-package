@@ -10,30 +10,27 @@ CWD=$PWD
 #cd $(dirname $(readlink -f "$0"))/..
 
 function usage() {
-  >&2 echo "Usage: $0 [ -p ]"
-  >&2 echo "       where -p posts to personal CRAN-like repository."
+  >&2 echo "Usage: $0 [ --post [ --rust ] ]"
+  >&2 echo "       where --post deploys to personal CRAN-like repository."
+  >&2 echo "             --rust if the deployment involves static libraries."
   exit 1
 }
 
-if [[ $# -eq 0 ]]
-then
-  DEFAULT=""
-  >&2 echo "Note: using default arguments: $DEFAULT"
-  set -- $DEFAULT
-fi
-
-while getopts ":p" o
+OPTS=""
+while [[ $# -gt 1 ]]
 do
-  case "${o}" in
-    p)
-      FLAG_POST=yes
-      ;;
-    *)
-      usage
-      ;;
-  esac
+  if [[ "$1" == --rust ]]
+  then
+    OPTS="--rust"
+    shift
+  elif [[ "$1" == --post ]]
+  then
+    FLAG_POST=true
+    shift
+  else
+    usage
+  fi
 done
-shift $((OPTIND-1))
 
 if [[ $# -ne 0 ]]
 then
@@ -82,6 +79,6 @@ mv $TGZ_NAME deliveries
 
 if [[ "$FLAG_POST" ]]
 then
-  deploy-R-package --rust "deliveries/$TGZ_NAME"
+  deploy-R-package $OPTS "deliveries/$TGZ_NAME"
 fi
 
