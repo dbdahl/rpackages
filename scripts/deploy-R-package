@@ -3,7 +3,7 @@
 set -e
 
 function usage() {
-  >&2 echo "usage: $0 [ --rust --allow-dirty ] PACKAGE.tar.gz"
+  >&2 echo "usage: $0 [ --rust --allow-dirty --src-only ] PACKAGE.tar.gz"
   exit 1
 }
 
@@ -16,6 +16,10 @@ do
   elif [[ "$1" == --allow-dirty ]]
   then
     ALLOW_DIRTY=true
+    shift
+  elif [[ "$1" == --src-only ]]
+  then
+    SRC_ONLY=true
     shift
   else
     usage
@@ -75,6 +79,11 @@ VERSION=${PREFIX##*_}
 SRCDIR="src/contrib"
 mkdir -p "$SRCDIR"
 cp "$SRC" "$SRCDIR"
+
+if [[ "$SRC_ONLY" ]]
+then
+  exec ./scripts/update-PACKAGES
+fi
 
 LINUXDIRLIBS="lib/linux/$NAME"
 MACDIRLIBS="lib/macosx/$NAME"
