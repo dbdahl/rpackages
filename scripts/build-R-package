@@ -40,6 +40,8 @@ fi
 if [[ $(find . -name DESCRIPTION | wc -l) -ne 1 ]]
 then
   >&2 echo "Cannot find the unique DESCRIPTION file."
+  >&2 echo 
+  >&2 find . -name DESCRIPTION 
   exit 2
 fi
 
