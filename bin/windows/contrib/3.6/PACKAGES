@@ -1,7 +1,6 @@
 Package: aibd
-Version: 0.1.0-20190905-1654
-Depends: sdols (> 1.7.4)
-Imports: rscala (>= 3.2.14)
+Version: 0.1.0-20191002-0929
+Imports: rscala (>= 3.2.14), commonsMath (>= 1.2.3)
 Suggests: testthat
 License: GPL-3
 

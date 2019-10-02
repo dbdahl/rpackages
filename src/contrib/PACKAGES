@@ -1,9 +1,9 @@
 Package: aibd
-Version: 0.1.0-20190928-1640
-Imports: rscala (>= 3.2.14)
+Version: 0.1.0-20191002-0929
+Imports: rscala (>= 3.2.14), commonsMath (>= 1.2.3)
 Suggests: testthat
 License: GPL-3
-MD5sum: 75a69fd00b0c9a893c0a20ff2b86e140
+MD5sum: 884963cc93f94fd8f2945043576c7b13
 NeedsCompilation: no
 
 Package: commonsMath
