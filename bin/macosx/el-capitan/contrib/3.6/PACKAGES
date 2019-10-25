@@ -20,12 +20,12 @@ License: MIT + file LICENSE | Apache License 2.0
 MD5sum: e889e4f1925c4af7e4cfb1e43b5e6d1b
 
 Package: rscala
-Version: 3.2.16
+Version: 3.2.16-20191025-0754
 Depends: R (>= 3.1.0)
 Imports: utils
 Suggests: testthat, devtools, rstudioapi, processx
 License: Apache License 2.0 | file LICENSE
-MD5sum: f55604c17caf0fb6c4ce5880a71fbba4
+MD5sum: 480a0f5e01834510dad94567ca3eb43f
 
 Package: salso
 Version: 0.1.3
