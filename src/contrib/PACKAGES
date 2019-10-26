@@ -14,6 +14,14 @@ License: Apache License 2.0 | file LICENSE
 MD5sum: ddb08d692dea7430a54332f332233129
 NeedsCompilation: no
 
+Package: dingg
+Version: 0.1.0
+Depends: R (>= 3.3.0)
+Suggests: testthat, salso
+License: MIT + file LICENSE | Apache License 2.0
+MD5sum: e24d67f16ce436ebb93aea46cc2da0a4
+NeedsCompilation: yes
+
 Package: focal
 Version: 0.1.0
 Depends: R (>= 3.3.0)
