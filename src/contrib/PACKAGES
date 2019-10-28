@@ -19,7 +19,7 @@ Version: 0.1.0
 Depends: R (>= 3.3.0)
 Suggests: testthat, salso
 License: MIT + file LICENSE | Apache License 2.0
-MD5sum: e24d67f16ce436ebb93aea46cc2da0a4
+MD5sum: e9d2c73330e7f9333d0efc0bd726cac6
 NeedsCompilation: yes
 
 Package: focal
