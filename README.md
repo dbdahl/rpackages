@@ -13,7 +13,7 @@ To enable this repository, execute the following in R:
 source("https://dbdahl.github.io/rpackages/scripts/enable") 
 ```
 
-You can then install packages as usual, e.g.:
+Then, please close your R session.  In your next R session, you can then install packages as usual, e.g.:
 
 ```R
 install.packages("rscala")
