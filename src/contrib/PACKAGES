@@ -30,6 +30,14 @@ License: MIT + file LICENSE | Apache License 2.0
 MD5sum: 0d1f75588992e8c900025e1614c7cd95
 NeedsCompilation: yes
 
+Package: pumpkin
+Version: 0.1.0
+Depends: R (>= 3.3.0)
+Suggests: testthat, salso
+License: MIT + file LICENSE | Apache License 2.0
+MD5sum: 9fea5fcafbdd5ad8c41525689da3cd23
+NeedsCompilation: yes
+
 Package: rscala
 Version: 3.2.16-20191025-0754
 Depends: R (>= 3.1.0)
@@ -43,7 +51,7 @@ Package: salso
 Version: 0.1.10
 Depends: R (>= 3.3.0)
 License: MIT + file LICENSE | Apache License 2.0
-MD5sum: 141c2313fe124f8a828912a3fb62cd11
+MD5sum: 4291f84b39c1453543ba179fc12e05d5
 NeedsCompilation: yes
 
 Package: sdols
