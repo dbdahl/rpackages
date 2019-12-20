@@ -26,6 +26,13 @@ Suggests: testthat, shallot, salso
 License: MIT + file LICENSE | Apache License 2.0
 MD5sum: e889e4f1925c4af7e4cfb1e43b5e6d1b
 
+Package: pumpkin
+Version: 0.1.0
+Depends: R (>= 3.3.0)
+Suggests: testthat, salso
+License: MIT + file LICENSE | Apache License 2.0
+MD5sum: 44d5169d7a3fe4816b99b1227a016b11
+
 Package: rscala
 Version: 3.2.16-20191025-0754
 Depends: R (>= 3.1.0)
