@@ -42,10 +42,10 @@ License: Apache License 2.0 | file LICENSE
 MD5sum: 480a0f5e01834510dad94567ca3eb43f
 
 Package: salso
-Version: 0.1.11
+Version: 0.1.12
 Depends: R (>= 3.3.0)
 License: MIT + file LICENSE | Apache License 2.0
-MD5sum: cad4eb7912ef7d9bdb8f40fbcc70f3a2
+MD5sum: 045ce6c5c33d55a01976f6c3f91fc78d
 
 Package: sdols
 Version: 1.7.5-20190905-1646
