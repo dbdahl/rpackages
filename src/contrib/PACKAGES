@@ -39,12 +39,12 @@ MD5sum: f08318551580713f6a087b68341caa96
 NeedsCompilation: yes
 
 Package: rscala
-Version: 3.2.16-20191025-0754
+Version: 3.2.17
 Depends: R (>= 3.1.0)
 Imports: utils
-Suggests: testthat, devtools, rstudioapi, processx
+Suggests: knitr, testthat, devtools, rstudioapi, processx
 License: Apache License 2.0 | file LICENSE
-MD5sum: 8366c23727b872956a198715b12d3303
+MD5sum: 77da0f2604d1643c8c82dff640227da3
 NeedsCompilation: no
 
 Package: salso

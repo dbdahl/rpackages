@@ -32,10 +32,10 @@ License: MIT + file LICENSE | Apache License 2.0
 Archs: i386, x64
 
 Package: rscala
-Version: 3.2.16-20191025-0754
+Version: 3.2.17
 Depends: R (>= 3.1.0)
 Imports: utils
-Suggests: testthat, devtools, rstudioapi, processx
+Suggests: knitr, testthat, devtools, rstudioapi, processx
 License: Apache License 2.0 | file LICENSE
 
 Package: salso
