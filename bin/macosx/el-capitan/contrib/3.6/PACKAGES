@@ -6,11 +6,11 @@ License: GPL-3
 MD5sum: 6683d323e9c552f61dff1782e8494e7e
 
 Package: commonsMath
-Version: 1.2.4-20190905-1641
-Suggests: rscala (>= 3.2.14), rJava (>= 0.9-10), testthat, knitr,
+Version: 1.2.5
+Suggests: rscala (>= 3.2.17), rJava (>= 0.9-10), testthat, knitr,
         rmarkdown
 License: Apache License 2.0 | file LICENSE
-MD5sum: 3e729afb9499e755e83af3b5f3a2927f
+MD5sum: b1677e4aab6bf9683dca30e4aaa1b944
 
 Package: dingg
 Version: 0.1.0

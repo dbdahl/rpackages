@@ -5,8 +5,8 @@ Suggests: testthat
 License: GPL-3
 
 Package: commonsMath
-Version: 1.2.4-20190905-1641
-Suggests: rscala (>= 3.2.14), rJava (>= 0.9-10), testthat, knitr,
+Version: 1.2.5
+Suggests: rscala (>= 3.2.17), rJava (>= 0.9-10), testthat, knitr,
         rmarkdown
 License: Apache License 2.0 | file LICENSE
 
