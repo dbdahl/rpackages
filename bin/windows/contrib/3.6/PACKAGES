@@ -1,6 +1,6 @@
 Package: aibd
-Version: 0.1.1
-Imports: rscala (>= 3.2.14), commonsMath (>= 1.2.3)
+Version: 0.1.2
+Imports: rscala (>= 3.2.17), commonsMath (>= 1.2.5)
 Suggests: testthat
 License: GPL-3
 
