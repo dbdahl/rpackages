@@ -31,7 +31,7 @@ Version: 0.1.0
 Depends: R (>= 3.3.0)
 Suggests: testthat, salso
 License: MIT + file LICENSE | Apache License 2.0
-MD5sum: 44d5169d7a3fe4816b99b1227a016b11
+MD5sum: 107eb5f16a65b63f3f4f51fb09b4d8bb
 
 Package: rscala
 Version: 3.2.18
