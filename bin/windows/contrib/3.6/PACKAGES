@@ -39,7 +39,7 @@ Suggests: knitr, testthat, devtools, rstudioapi, processx
 License: Apache License 2.0 | file LICENSE
 
 Package: salso
-Version: 0.1.16
+Version: 0.1.17
 Depends: R (>= 3.3.0)
 License: MIT + file LICENSE | Apache License 2.0
 Archs: i386, x64
