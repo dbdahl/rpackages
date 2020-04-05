@@ -63,8 +63,8 @@ MD5sum: 89f90ca750f7e62d408b1751cd8bc6de
 NeedsCompilation: no
 
 Package: shallot
-Version: 0.4.7
-Imports: rscala (>= 3.2.14), commonsMath (>= 1.2.3), salso (>= 0.1.3)
+Version: 0.4.9
+Imports: rscala (>= 3.2.18), commonsMath (>= 1.2.5), salso (>= 0.1.16)
 License: Apache License 2.0 | file LICENSE
-MD5sum: 50309b09713ec3acad024abd08620141
+MD5sum: 3959bc722d82baea486ccf1c40ed0235
 NeedsCompilation: no
