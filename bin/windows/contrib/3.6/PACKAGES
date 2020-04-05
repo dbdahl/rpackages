@@ -4,6 +4,12 @@ Imports: utils, rscala (>= 3.2.18), commonsMath (>= 1.2.5)
 Suggests: testthat
 License: GPL-3
 
+Package: bamboo
+Version: 0.9.25
+Depends: R (>= 3.5.0)
+Imports: rscala (>= 3.2.18)
+License: GPL-3
+
 Package: commonsMath
 Version: 1.2.5
 Suggests: rscala (>= 3.2.17), rJava (>= 0.9-10), testthat, knitr,

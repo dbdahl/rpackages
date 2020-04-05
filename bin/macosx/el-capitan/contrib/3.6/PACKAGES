@@ -5,6 +5,13 @@ Suggests: testthat
 License: GPL-3
 MD5sum: bc4375a8c817d72861090aad267d13bf
 
+Package: bamboo
+Version: 0.9.25
+Depends: R (>= 3.5.0)
+Imports: rscala (>= 3.2.18)
+License: GPL-3
+MD5sum: 7e57d95b4fa6bf945778a0a4550c40a9
+
 Package: commonsMath
 Version: 1.2.5
 Suggests: rscala (>= 3.2.17), rJava (>= 0.9-10), testthat, knitr,

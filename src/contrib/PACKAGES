@@ -6,6 +6,14 @@ License: GPL-3
 MD5sum: 487ea4cd8d7efd55c8dfa96ebf1e953b
 NeedsCompilation: no
 
+Package: bamboo
+Version: 0.9.25
+Depends: R (>= 3.5.0)
+Imports: rscala (>= 3.2.18)
+License: GPL-3
+MD5sum: 42b742a66ed2fa1d536a20c9c87e4f49
+NeedsCompilation: no
+
 Package: commonsMath
 Version: 1.2.5
 Suggests: rscala (>= 3.2.17), rJava (>= 0.9-10), testthat, knitr,
