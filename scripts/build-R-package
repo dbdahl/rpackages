@@ -21,6 +21,11 @@ while [[ $# -gt 0 ]]
 do
   if [[ "$1" == --rust ]]
   then
+    if [[ -z "$FLAG_POST" ]]
+    then
+      >&2 echo "The '--rust' flag is only available when using the '--post' flag."
+      usage
+    fi
     OPTS="--rust"
     shift
   elif [[ "$1" == --post ]]
