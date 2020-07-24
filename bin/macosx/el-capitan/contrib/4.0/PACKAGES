@@ -2,4 +2,4 @@ Package: salso
 Version: 0.1.17
 Depends: R (>= 3.3.0)
 License: MIT + file LICENSE | Apache License 2.0
-MD5sum: 8bd9e90e910eba6077276d33049d2f57
+MD5sum: 8e5188bf817d24fa217746ca1b0b501b
