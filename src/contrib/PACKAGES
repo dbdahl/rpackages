@@ -59,7 +59,7 @@ Package: salso
 Version: 0.1.17
 Depends: R (>= 3.3.0)
 License: MIT + file LICENSE | Apache License 2.0
-MD5sum: c86a58e7d0965ee3f7a047e1c6a1c016
+MD5sum: 287183c19f968615247e0fb3a325ba1f
 NeedsCompilation: yes
 
 Package: sdols
