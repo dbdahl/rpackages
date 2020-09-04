@@ -1,3 +1,10 @@
+Package: pumpkin
+Version: 0.1.0
+Depends: R (>= 3.3.0)
+Suggests: testthat, salso
+License: MIT + file LICENSE | Apache License 2.0
+Archs: i386, x64
+
 Package: salso
 Version: 0.1.17
 Depends: R (>= 3.3.0)
