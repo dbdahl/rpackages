@@ -3,7 +3,7 @@ Version: 0.1.3
 Depends: R (>= 3.3.0)
 Suggests: testthat, salso
 License: MIT + file LICENSE | Apache License 2.0
-MD5sum: 6543c16e8218e3601b19280906591de2
+MD5sum: dbfcca0b2bd0914740a6e2e3e90b0d7b
 
 Package: salso
 Version: 0.1.17
