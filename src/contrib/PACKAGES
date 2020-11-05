@@ -56,10 +56,10 @@ MD5sum: 65859ea050a05ea1954c230a275c6809
 NeedsCompilation: no
 
 Package: salso
-Version: 0.1.17
+Version: 0.2.0
 Depends: R (>= 3.3.0)
 License: MIT + file LICENSE | Apache License 2.0
-MD5sum: 287183c19f968615247e0fb3a325ba1f
+MD5sum: 51457b409fb798e05b2ce584d6ad28c3
 NeedsCompilation: yes
 
 Package: sdols
