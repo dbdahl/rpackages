@@ -10,3 +10,9 @@ Version: 0.2.0
 Depends: R (>= 3.3.0)
 License: MIT + file LICENSE | Apache License 2.0
 MD5sum: a379dece18adc0fee5e42115e401bcd8
+
+Package: sdols
+Version: 3.0.0
+Depends: R (>= 3.3.0), salso (>= 0.1.16)
+License: Apache License 2.0 | file LICENSE
+MD5sum: 0d12a3737d823ab0e5122f42cb6daa3c

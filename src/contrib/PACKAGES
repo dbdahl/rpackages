@@ -63,11 +63,10 @@ MD5sum: 51457b409fb798e05b2ce584d6ad28c3
 NeedsCompilation: yes
 
 Package: sdols
-Version: 1.7.5-20190905-1646
-Depends: R (>= 3.1.0)
-Imports: rscala (>= 3.2.14), commonsMath (>= 1.2.3), stats
+Version: 3.0.0
+Depends: R (>= 3.3.0), salso (>= 0.1.16)
 License: Apache License 2.0 | file LICENSE
-MD5sum: 89f90ca750f7e62d408b1751cd8bc6de
+MD5sum: 21614b89df98b7b608a4021120b05778
 NeedsCompilation: no
 
 Package: shallot
