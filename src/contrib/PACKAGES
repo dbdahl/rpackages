@@ -39,11 +39,11 @@ MD5sum: 0d1f75588992e8c900025e1614c7cd95
 NeedsCompilation: yes
 
 Package: pumpkin
-Version: 0.1.9
+Version: 0.1.10
 Depends: R (>= 3.3.0)
 Suggests: testthat, salso
 License: MIT + file LICENSE | Apache License 2.0
-MD5sum: fa189534a5ef787d01f95278107c265b
+MD5sum: f6d933a8685244ad120396da304bc58a
 NeedsCompilation: yes
 
 Package: rscala
