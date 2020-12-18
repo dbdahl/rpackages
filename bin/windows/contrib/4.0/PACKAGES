@@ -1,5 +1,5 @@
 Package: pumpkin
-Version: 0.1.18
+Version: 0.1.19
 Depends: R (>= 3.3.0), salso (>= 0.2.5)
 Suggests: testthat
 License: MIT + file LICENSE | Apache License 2.0
