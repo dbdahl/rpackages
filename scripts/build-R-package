@@ -10,9 +10,10 @@ CWD=$PWD
 #cd $(dirname $(readlink -f "$0"))/..
 
 function usage() {
-  >&2 echo "Usage: $0 [ --post [ --rust ] ]"
+  >&2 echo "Usage: $0 [ --post [ --rust --dry-run ] ]"
   >&2 echo "       where --post deploys to personal CRAN-like repository."
   >&2 echo "             --rust if the deployment involves static libraries."
+  >&2 echo "             --dry-run if deployment should only be tested, not executed."
   exit 1
 }
 
@@ -26,7 +27,16 @@ do
       >&2 echo "The '--rust' flag is only available when using the '--post' flag."
       usage
     fi
-    OPTS="--rust"
+    OPTS="--rust $OPTS"
+    shift
+  elif [[ "$1" == --dry-run ]]
+  then
+    if [[ -z "$FLAG_POST" ]]
+    then
+      >&2 echo "The '--dry-run' flag is only available when using the '--post' flag."
+      usage
+    fi
+    OPTS="--dry-run $OPTS"
     shift
   elif [[ "$1" == --post ]]
   then

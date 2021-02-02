@@ -3,7 +3,7 @@
 set -e
 
 function usage() {
-  >&2 echo "usage: $0 [ --rust --allow-dirty --src-only ] PACKAGE.tar.gz"
+  >&2 echo "usage: $0 [ --rust --allow-dirty --src-only --dry-run ] PACKAGE.tar.gz"
   exit 1
 }
 
@@ -20,6 +20,10 @@ do
   elif [[ "$1" == --src-only ]]
   then
     SRC_ONLY=true
+    shift
+  elif [[ "$1" == --dry-run ]]
+  then
+    DRY_RUN=true
     shift
   else
     usage
@@ -80,7 +84,7 @@ SRCDIR="src/contrib"
 mkdir -p "$SRCDIR"
 cp "$SRC" "$SRCDIR"
 
-if [[ "$SRC_ONLY" ]]
+if [[ "$SRC_ONLY" && -z "$DRY_RUN" ]]
 then
   exec ./scripts/update-PACKAGES
 fi
@@ -159,6 +163,9 @@ fi
 
 echo
 echo
-./scripts/update-PACKAGES
+if [[ -z "$DRY_RUN" ]]
+then
+  ./scripts/update-PACKAGES
+fi
 
 
