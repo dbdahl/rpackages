@@ -1,9 +1,9 @@
 Package: pumpkin
-Version: 0.1.21
+Version: 0.1.22
 Depends: R (>= 3.3.0), salso (>= 0.2.5)
 Suggests: testthat
 License: MIT + file LICENSE | Apache License 2.0
-MD5sum: e24d25c411cfd34c4e652a5310afd51e
+MD5sum: aea60dabd47bb06d507a36f47437f1b8
 
 Package: salso
 Version: 0.2.5
