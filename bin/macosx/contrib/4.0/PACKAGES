@@ -1,15 +1,15 @@
 Package: pumpkin
-Version: 0.1.24
+Version: 0.1.25
 Depends: R (>= 3.3.0), salso (>= 0.2.5)
 Suggests: testthat
 License: MIT + file LICENSE | Apache License 2.0
-MD5sum: 552f15c416774b43daf66dcfd9928fe3
+MD5sum: 3401f6992fadbbe0827577bc374ce85f
 
 Package: salso
-Version: 0.2.5
+Version: 0.2.6
 Depends: R (>= 3.3.0)
 License: MIT + file LICENSE | Apache License 2.0
-MD5sum: b708584e9bb1d895ee960780e15344d6
+MD5sum: 9781f649c8710a65fe4bd16bd37aba2c
 
 Package: sdols
 Version: 3.0.0
