@@ -142,22 +142,34 @@ echo
 echo +-------------------------------+
 echo ----------- WIN BUILD -----------
 echo +-------------------------------+
+echo -e "\nW0"
 ssh winbuilder rm -rf "$SCRATCH"
+echo -e "\nW1"
 ssh winbuilder mkdir "$SCRATCH"
+echo -e "\nW2"
 scp "$SRC" winbuilder:"$SCRATCH"
+echo -e "\nW3"
 ssh winbuilder tar zx -C "$SCRATCH" -f "$SCRATCH/$FULL"
+echo -e "\nW4"
 ssh winbuilder R CMD INSTALL --build "$SCRATCH/$NAME"
+echo -e "\nW5"
 scp winbuilder:"$PREFIX.zip" "$SCRATCH"
+echo -e "\nW6"
 ssh winbuilder rm "$PREFIX.zip"
+echo -e "\nW7"
 BINVERSION=$(unzip -p "$SCRATCH/$PREFIX.zip" "$NAME"/DESCRIPTION | grep -Po "Built: R \d+.\d+" | cut -d' ' -f 3)
 WINDIR="bin/windows/contrib/$BINVERSION"
 mkdir -p "$WINDIR"
 mv "$SCRATCH/$PREFIX.zip" "$WINDIR"
 if [[ "$DO_RUST" ]]
 then
+  echo -e "\nW8"
   ssh winbuilder tar c -C "$SCRATCH/$NAME" -f "$SCRATCH/$NAME/$VERSION.tar" src-i386/rustlib/target/i686-pc-windows-gnu/release/librustlib.a src-x64/rustlib/target/x86_64-pc-windows-gnu/release/librustlib.a
+  echo -e "\nW9"
   scp winbuilder:"$SCRATCH/$NAME/$VERSION.tar" "$WINDIRLIBS"
+  echo -e "\nW10"
   gzip -f "$WINDIRLIBS/$VERSION.tar"
+  echo -e "\nW11"
 fi
 
 
