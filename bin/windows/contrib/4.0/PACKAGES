@@ -4,8 +4,9 @@ Depends: R (>= 4.0.0)
 License: MIT + file LICENSE | Apache License 2.0
 
 Package: pumpkin
-Version: 0.1.26
-Depends: R (>= 3.3.0), salso (>= 0.2.5)
+Version: 0.1.27
+Depends: R (>= 4.0.0), salso (>= 0.2.5)
+LinkingTo: cargo
 Suggests: testthat
 License: MIT + file LICENSE | Apache License 2.0
 Archs: i386, x64
