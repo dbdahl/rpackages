@@ -12,10 +12,11 @@ License: MIT + file LICENSE | Apache License 2.0
 MD5sum: 71d5939abf5e722cc1090e057a77d6f1
 
 Package: salso
-Version: 0.2.6
-Depends: R (>= 3.3.0)
+Version: 0.2.7
+Depends: R (>= 4.0.0)
+LinkingTo: cargo
 License: MIT + file LICENSE | Apache License 2.0
-MD5sum: 9781f649c8710a65fe4bd16bd37aba2c
+MD5sum: e2299aa6fce8582c83d973fb662d9171
 
 Package: sdols
 Version: 3.0.0
