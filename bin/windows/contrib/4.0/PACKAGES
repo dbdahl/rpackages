@@ -1,6 +1,6 @@
 Package: cargo
-Version: 0.1.11
-Depends: R (>= 4.0.0)
+Version: 0.1.12
+Depends: R (>= 3.6.0)
 License: MIT + file LICENSE | Apache License 2.0
 
 Package: pumpkin

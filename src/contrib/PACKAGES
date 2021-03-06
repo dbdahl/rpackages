@@ -15,10 +15,10 @@ MD5sum: 42b742a66ed2fa1d536a20c9c87e4f49
 NeedsCompilation: no
 
 Package: cargo
-Version: 0.1.11
-Depends: R (>= 4.0.0)
+Version: 0.1.12
+Depends: R (>= 3.6.0)
 License: MIT + file LICENSE | Apache License 2.0
-MD5sum: c55908c5e75fa6396447ad43490b6417
+MD5sum: 6472c37f62e6c439661aa685967d2a21
 NeedsCompilation: no
 
 Package: commonsMath
